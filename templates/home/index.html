@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- HERO -->
+<div class="text-center mb-5">
+
+    <h1 class="display-4 fw-bold">Welcome to CashCatcher 💰</h1>
+
+    <p class="lead mt-3">
+        Track your income and expenses in a simple and organized way.
+        Stay aware of your financial habits and manage your budget better.
+    </p>
+
+    <a href="/login/" class="btn btn-primary btn-lg mt-3">
+        Start Tracking
+    </a>
+
+</div>
+
+
+<!-- FEATURES -->
+<div class="row text-center">
+
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Track Expenses</h5>
+                <p class="card-text">
+                    Easily record your daily spending and keep everything organized.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Budget Overview</h5>
+                <p class="card-text">
+                    See how much money you have left each month.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Monthly Email Reports</h5>
+                <p class="card-text">
+                    Receive email summaries to monitor your financial habits.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
