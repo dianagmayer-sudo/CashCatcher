@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+<div class="col-lg-5">
+
+<h3 class="mb-4">My Profile</h3>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<div class="row">
+
+<div class="col-6 mb-3">
+<label class="small text-muted">First name</label>
+{{ u_form.first_name }}
+</div>
+
+<div class="col-6 mb-3">
+<label class="small text-muted">Last name</label>
+{{ u_form.last_name }}
+</div>
+
+</div>
+
+<div class="mb-3">
+<label class="small text-muted">Email</label>
+{{ u_form.email }}
+</div>
+
+<div class="row">
+
+<div class="col-4 mb-3">
+<label class="small text-muted">Age</label>
+{{ p_form.age }}
+</div>
+
+<div class="col-8 mb-3">
+<label class="small text-muted">Occupation</label>
+{{ p_form.occupation }}
+</div>
+
+</div>
+
+<button class="btn btn-primary w-100 mt-3">
+Save changes
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}

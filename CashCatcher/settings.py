@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)i*r!_nxqgpnxgy_@iqdmel_to$6bba7vdhzot_$5qt#wmanzx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -104,14 +104,20 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-gb'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Bucharest'
 
-USE_I18N = True
+DATE_FORMAT = 'd/m/Y'
+SHORT_DATE_FORMAT = 'd/m/Y'
 
-USE_TZ = True
+DATE_INPUT_FORMATS = [
+    '%d/%m/%Y',
+    '%d-%m-%Y',
+]
 
+DATETIME_FORMAT = 'd/m/Y H:i'
+SHORT_DATETIME_FORMAT = 'd/m/Y H:i'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
@@ -123,3 +129,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Authentication redirects
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'home',
+    'accounts',
+    'categories',
+    'transactions',
+    'dashboard',
+]

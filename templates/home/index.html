@@ -3,57 +3,150 @@
 {% block content %}
 
 <!-- HERO -->
-<div class="text-center mb-5">
+<div class="p-5 mb-5 rounded-4 shadow-sm"
+     style="background:linear-gradient(135deg,#4F6F52,#739072); color:white;">
 
-    <h1 class="display-4 fw-bold">Welcome to CashCatcher 💰</h1>
+    <div class="container py-4 text-center">
 
-    <p class="lead mt-3">
-        Track your income and expenses in a simple and organized way.
-        Stay aware of your financial habits and manage your budget better.
-    </p>
+        <h1 class="display-4 fw-bold">
+            Take Control of Your Money 💰
+        </h1>
 
-    <a href="/login/" class="btn btn-primary btn-lg mt-3">
-        Start Tracking
-    </a>
+        <p class="lead mt-3">
+            CashCatcher helps you track income, monitor expenses and build
+            healthier financial habits.
+        </p>
+
+        {% if user.is_authenticated %}
+
+        <a href="{% url 'dashboard' %}" class="btn btn-light btn-lg mt-3 px-4">
+            Go to Dashboard
+        </a>
+
+        {% else %}
+
+        <a href="{% url 'register' %}" class="btn btn-light btn-lg mt-3 px-4">
+            Start Tracking
+        </a>
+
+        <div class="mt-2">
+            <a href="{% url 'login' %}" class="text-white">
+                Already have an account? Login
+            </a>
+        </div>
+
+        {% endif %}
+
+    </div>
 
 </div>
 
 
+
 <!-- FEATURES -->
-<div class="row text-center">
+<div class="row g-4">
 
+    <!-- CARD 1 -->
     <div class="col-md-4">
-        <div class="card shadow-sm">
+        <div class="card shadow h-100" style="border-radius:16px;">
+
             <div class="card-body">
+
+                <div class="display-5 mb-3">📊</div>
+
                 <h5 class="card-title">Track Expenses</h5>
-                <p class="card-text">
-                    Easily record your daily spending and keep everything organized.
+
+                <p class="text-muted">
+                    Add transactions quickly and see where your money goes.
                 </p>
+
+                <table class="table table-sm mt-3">
+                    <tr>
+                        <td>Groceries</td>
+                        <td class="text-danger">-45</td>
+                    </tr>
+                    <tr>
+                        <td>Transport</td>
+                        <td class="text-danger">-12</td>
+                    </tr>
+                </table>
+
             </div>
+
         </div>
     </div>
 
+    <!-- CARD 2 -->
     <div class="col-md-4">
-        <div class="card shadow-sm">
+        <div class="card shadow h-100" style="border-radius:16px;">
+
             <div class="card-body">
-                <h5 class="card-title">Budget Overview</h5>
-                <p class="card-text">
-                    See how much money you have left each month.
+
+                <div class="display-5 mb-3">🌿</div>
+
+                <h5 class="card-title">Healthy Budget</h5>
+
+                <p class="text-muted">
+                    Visualize your remaining monthly budget instantly.
                 </p>
+
+                <div class="progress mt-4" style="height:20px;">
+                    <div class="progress-bar"
+                         style="background:#C2A878; width:65%;">
+                        65%
+                    </div>
+                </div>
+
             </div>
+
         </div>
     </div>
 
+    <!-- CARD 3 -->
     <div class="col-md-4">
-        <div class="card shadow-sm">
+        <div class="card shadow h-100" style="border-radius:16px;">
+
             <div class="card-body">
-                <h5 class="card-title">Monthly Email Reports</h5>
-                <p class="card-text">
-                    Receive email summaries to monitor your financial habits.
+
+                <div class="display-5 mb-3">📧</div>
+
+                <h5 class="card-title">Monthly Insights</h5>
+
+                <p class="text-muted">
+                    Receive simple reports to understand your habits better.
                 </p>
+
+                <div class="d-flex align-items-end mt-4"
+                     style="height:80px; gap:6px;">
+
+                    <div style="width:18px;height:40px;background:#3A7D44;"></div>
+                    <div style="width:18px;height:65px;background:#3A7D44;"></div>
+                    <div style="width:18px;height:50px;background:#3A7D44;"></div>
+                    <div style="width:18px;height:70px;background:#3A7D44;"></div>
+
+                </div>
+
             </div>
+
         </div>
     </div>
+
+</div>
+
+
+
+<!-- EXTRA SECTION -->
+<div class="mt-4 p-4 rounded-4"
+     style="background:#ffffff; border-left:6px solid #C2A878;">
+
+    <h4 class="fw-bold">
+        Why CashCatcher?
+    </h4>
+
+    <p class="text-muted mb-0">
+        Designed for simplicity and clarity, CashCatcher gives you full control
+        over your finances without overwhelming features.
+    </p>
 
 </div>
 

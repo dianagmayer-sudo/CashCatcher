@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="mb-4">Dashboard</h2>
+
+<div class="row">
+
+    <!-- BALANCE -->
+    <div class="col-md-4">
+        <div class="card text-white bg-primary shadow">
+            <div class="card-body">
+                <h5 class="card-title">Balance</h5>
+                <h3>{{ balance }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- INCOME -->
+    <div class="col-md-4">
+        <div class="card text-white bg-success shadow">
+            <div class="card-body">
+                <h5 class="card-title">Total Income</h5>
+                <h3>{{ income }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXPENSES -->
+    <div class="col-md-4">
+        <div class="card text-white bg-danger shadow">
+            <div class="card-body">
+                <h5 class="card-title">Total Expenses</h5>
+                <h3>{{ expenses }}</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- QUICK ACTION -->
+<div class="mt-5">
+
+<a href="{% url 'add_transaction' %}" class="btn btn-success">
+Add Transaction
+</a>
+
+<a href="{% url 'transactions_list' %}" class="btn btn-outline-dark">
+View Transactions
+</a>
+
+</div>
+
+{% endblock %}
